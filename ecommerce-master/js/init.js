@@ -7,6 +7,38 @@ const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
 
+function saveData(){
+  sessionStorage.setItem('user', document.getElementById("inputName").value);
+}
+
+function showData(){
+  var user = sessionStorage.getItem("user");
+  if( user != null) {
+    document.getElementById("userName").innerHTML = user;
+  } else {
+    document.getElementById("userName").innerHTML = "Invitado";
+  }
+}
+
+var page = "sign-in.html"
+function redirect(){
+  location.href = page
+}
+function logOut(){
+  sessionStorage.removeItem("user");
+  redirect();
+}
+
+function showMessage() {
+  var user = sessionStorage.getItem("user");
+  if (user != null) {
+    document.getElementById("message").innerHTML = "Cerrar Sesión";
+  } else {
+    document.getElementById("message").innerHTML = "Iniciar Sesión";
+  }
+}
+
+
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
