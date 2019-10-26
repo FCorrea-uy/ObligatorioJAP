@@ -26,6 +26,17 @@ body {
     z-index: 2;
   }
   
+  .form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-image: url('usuario.png');
+    background-position: top left; 
+    background-repeat: no-repeat;
+    background-size: 30px 36px;
+    padding-left: 32px;
+  }
+
   .form-signin input[type="email"] {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
