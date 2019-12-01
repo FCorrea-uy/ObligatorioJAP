@@ -56,7 +56,7 @@ function signOut()
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () 
     {
-    document.getElementById("nombre").innerHTML = 'Invitado';
+    document.getElementById("userName").innerHTML = 'Invitado';
     window.location.assign("https://FatimaCo.github.io/ecommerce-master/sign-in.html");
     });
 }
