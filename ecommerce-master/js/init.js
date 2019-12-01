@@ -47,7 +47,7 @@ function onSignIn(googleUser)
         sessionStorage.setItem('usuario', profile.getName());
       }
       {
-        window.location.assign("https://FatimaCo.github.io/ecommerce-master/index.html");
+        window.location.assign("https://fatimaco.github.io/ObligatorioJAP/ecommerce-master/index.html");
       }
 }
  
@@ -57,7 +57,7 @@ function signOut()
     auth2.signOut().then(function () 
     {
     document.getElementById("userName").innerHTML = 'Invitado';
-    window.location.assign("https://FatimaCo.github.io/ecommerce-master/sign-in.html");
+    window.location.assign("https://fatimaco.github.io/ObligatorioJAP/ecommerce-master/sign-in.html");
     });
 }
 
