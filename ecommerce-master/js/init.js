@@ -44,7 +44,7 @@ function onSignIn(googleUser)
 {
       var profile = googleUser.getBasicProfile(); 
       {
-        sessionStorage.setItem('usuario', profile.getName());
+        sessionStorage.setItem('user', profile.getName());
       }
       {
         window.location.assign("https://fatimaco.github.io/ObligatorioJAP/ecommerce-master/index.html");
