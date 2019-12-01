@@ -11,12 +11,21 @@ function saveData() {
     sessionStorage.setItem('user', document.getElementById("inputName").value);
 }
 
-function showData() {
     var user = sessionStorage.getItem("user");
+
+function showData() {
     if (user != null) {
         document.getElementById("userName").innerHTML = user;
     } else {
         document.getElementById("userName").innerHTML = "Invitado";
+    }
+}
+
+function showMessage() {
+    if (user != null) {
+        document.getElementById("message").innerHTML = "Cerrar Sesión";
+    } else {
+        document.getElementById("message").innerHTML = "Iniciar Sesión";
     }
 }
 
@@ -31,15 +40,34 @@ function logOut() {
     redirect();
 }
 
-function showMessage() {
-    var user = sessionStorage.getItem("user");
-    if (user != null) {
-        document.getElementById("message").innerHTML = "Cerrar Sesión";
-    } else {
-        document.getElementById("message").innerHTML = "Iniciar Sesión";
-    }
+function onSignIn(googleUser) 
+{
+      var profile = googleUser.getBasicProfile(); 
+      {
+        sessionStorage.setItem('usuario', profile.getName());
+      }
+      {
+        window.location.assign("https://FatimaCo.github.io/ecommerce-master/index.html");
+      }
+}
+ 
+function signOut() 
+{
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () 
+    {
+    document.getElementById("nombre").innerHTML = 'Invitado';
+    window.location.assign("https://FatimaCo.github.io/ecommerce-master/sign-in.html");
+    });
 }
 
+function onLoad() 
+{
+      gapi.load('auth2', function() 
+      {
+        gapi.auth2.init();
+      });
+}
 
 var showSpinner = function() {
     document.getElementById("spinner-wrapper").style.display = "block";
