@@ -29,7 +29,7 @@ function showMessage() {
     }
 }
 
-var page = "sign-in.html"
+var page = "https://fatimaco.github.io/ObligatorioJAP/ecommerce-master/sign-in.html"
 
 function redirect() {
     location.href = page
